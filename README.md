@@ -16,7 +16,7 @@ En este ejercicio se nos pedía crear una tabla en DBeaver a partir de un script
 
 **Diagrama adaptado a readme empleando Mermaid**  
 
-```erDiagram
+```mermaid
     CONTINENTS {
         int id_continent
         string continent_name
