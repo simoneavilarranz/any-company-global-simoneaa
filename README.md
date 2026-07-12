@@ -4,11 +4,9 @@
 
 En este ejercicio se nos pedía crear una tabla en DBeaver a partir de un script proporcionado. A continuación, era necesario normalizar la tabla y generar un diagrama de Chen de la misma, y finalmente crear un script para encontrar el país de la venta con id 3
 
-<img src="/img1.jpg">
-
 ## Normalización de la tabla
 
-<img src="/img2.jpg">
+<img src="/img1.jpg">
 
 ## Diagrama de Chen
 
@@ -18,7 +16,7 @@ En este ejercicio se nos pedía crear una tabla en DBeaver a partir de un script
 
 **Diagrama adaptado a readme empleando Mermaid**  
 
-erDiagram
+```erDiagram
     CONTINENTS {
         int id_continent
         string continent_name
@@ -55,3 +53,4 @@ erDiagram
     FOOD_CATEGORY ||--o{ FOOD_SUBCATEGORY : "includes"
     FOOD_SUBCATEGORY ||--o{ SALES : "recorded_in"
     CITIES ||--o{ SALES : "occurs_in"
+```
