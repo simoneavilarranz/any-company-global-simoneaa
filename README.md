@@ -12,7 +12,7 @@ En este ejercicio se nos pedía crear una tabla en DBeaver a partir de un script
 
 **Diagrama original creado con diagrams.net**  
 
-<img src="/any-company-global-chen.jpg">  
+<img src="/any-company-global_chen.jpg">  
 
 **Diagrama adaptado a readme empleando Mermaid**  
 
@@ -81,4 +81,17 @@ flowchart LR
     FOOD_CATEGORY o--o REL3{"1:N"} o--o FOOD_SUBCATEGORY
     FOOD_SUBCATEGORY o--o REL4{"N:N"} o--o SALES
     CITIES o--o REL5{"N:N"} o--o SALES
+```
+
+**Script**  
+
+Al contar con tablas intermedias para la normalización y dado que es necesario partir de la tabla "sales", se emplea un INNER JOIN para navegar entre las tablas intermedias y conectar la celda de la id_sales = 3 con su correspondiente en la tabla countries, de la siguiente manera:
+
+```
+SELECT c.country_name
+FROM sales s
+INNER JOIN cities_sales cs ON s.id_sale = cs.sales_id
+INNER JOIN cities ci ON cs.city_id = ci.id_city
+INNER JOIN countries c ON ci.country_id = c.id_country
+WHERE s.id_sale = 3;
 ```
